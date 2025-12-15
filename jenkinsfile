@@ -7,24 +7,19 @@ pipeline {
         
 	stage('Build Docker Image') {
             steps {
-                script {
-                    // Use shared library step
-                    builtImage = buildImage()
-                }
-            }
+                    buildApp()
+		}
         }
 
         stage('Test In Container') {
             steps {
-                script {
-                    testImage(builtImage)
+                    testApp()
                 }
-            }
         }
 
         stage('Deploy Container') {
             steps {
-                deployContainer()
+                    deployApp()
             }
         }
     }
