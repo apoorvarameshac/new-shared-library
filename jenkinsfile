@@ -1,4 +1,4 @@
-@Library('common-lib@main') _
+@Library('java-shared-library') _
 
 pipeline {
     agent any
